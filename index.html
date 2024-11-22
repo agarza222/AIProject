@@ -10,13 +10,13 @@
     <!-- Header -->
     <header class="header">
         <div class="header__logo">
-            <img src="images/takeflight.svg" alt="Take Flight Logo" class="header__logo-img">
-            <span class="header__logo-text">Take Flight</span>
+            <img src="images/tftrocket.svg" alt="Take Flight Logo" class="header__logo-img">
+            <span class="header__logo-text">Take Flight Creative Services&nbsp; &nbsp;&nbsp;</span>
         </div>
         <nav class="header__nav">
             <a href="#about" class="header__link">About</a>
             <a href="#services" class="header__link">Services</a>
-            <a href="#portfolio" class="header__link">Portfolio</a>
+            <a href="#portfolio" class="header__link">Apparel</a>
             <a href="#testimonials" class="header__link">Testimonials</a>
             <a href="#contact" class="header__link header__link--cta">Contact Us</a>
         </nav>
@@ -34,11 +34,25 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <h2 class="section__title">Why Choose Take Flight?</h2>
-        <p class="section__description">We specialize in unique content strategies designed to amplify your brand’s voice and engage your audience.</p>
+        <p class="section__description">
+            We specialize in unique content strategies designed to amplify your brand’s voice and engage your audience.
+        </p>
         <div class="about__items">
-            <div class="about__item">🚀 Expert Strategy</div>
-            <div class="about__item">🎨 Eye-Catching Design</div>
-            <div class="about__item">📈 Engagement Focused</div>
+            <div class="about__item">
+                <div class="about__icon">🚀</div>
+                <h3 class="about__item-title">Expert Strategy</h3>
+                <p class="about__item-description">Tailored strategies to help your brand achieve new heights.</p>
+            </div>
+            <div class="about__item">
+                <div class="about__icon">🎨</div>
+                <h3 class="about__item-title">Eye-Catching Design</h3>
+                <p class="about__item-description">Visually stunning designs that captivate your audience.</p>
+            </div>
+            <div class="about__item">
+                <div class="about__icon">📈</div>
+                <h3 class="about__item-title">Engagement Focused</h3>
+                <p class="about__item-description">Driving engagement through content that resonates.</p>
+            </div>
         </div>
     </section>
 
@@ -46,7 +60,6 @@
     <section id="services" class="section services">
         <h2 class="section__title">Our Services</h2>
         <div class="services__grid">
-            <!-- Social Media Strategy Card -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/strategy.jpeg" alt="Social Media Strategy" class="card__image">
@@ -56,8 +69,6 @@
                     <p class="card__description">Boost your engagement and reach with custom strategies.</p>
                 </div>
             </div>
-
-            <!-- Content Creation Card -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/contentcreation.jpg" alt="Content Creation" class="card__image">
@@ -67,8 +78,6 @@
                     <p class="card__description">Creative visuals and posts that resonate with your audience.</p>
                 </div>
             </div>
-
-            <!-- Brand Consulting Card -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/smconsulting.jpg" alt="Brand Consulting" class="card__image">
@@ -81,12 +90,14 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Apparel Section -->
     <section id="portfolio" class="section portfolio">
-        <h2 class="section__title">Our Portfolio</h2>
-        <p class="section__description">A showcase of our recent work across various platforms.</p>
+        <h2 class="section__title">Apparel</h2>
+        <p class="section__description">Take Flight T-shirts and Hoodies.</p>
         <div class="portfolio__gallery">
-            <!-- Portfolio items would go here -->
+            <div class="portfolio__item">
+                <img src="images/takeflightapparel.svg" alt="Take Flight Apparel" class="portfolio__image">
+            </div>
         </div>
     </section>
 
@@ -96,21 +107,27 @@
         <div class="testimonials__grid">
             <blockquote class="testimonial">
                 <p>"Take Flight transformed our online presence. Highly recommend!"</p>
-                <footer>- Client A</footer>
+                <footer>- Beth J</footer>
             </blockquote>
             <blockquote class="testimonial">
                 <p>"Incredible service and creativity. They understand our brand."</p>
-                <footer>- Client B</footer>
+                <footer>- Meshell C</footer>
             </blockquote>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
-        <h2 class="section__title"><strong>Get in Touch</strong></h2>
-        <p class="section__description">Ready to elevate your brand? Contact us for a free consultation.</p>
-        <a href="mailto:contact@takeflight.com" class="btn btn--secondary">Email Us</a>
-    </section>
+    <h2 class="section__title"><strong>Get in Touch</strong></h2>
+    <p class="section__description">Ready to elevate your brand? Contact us for a free consultation or sign up for updates below.</p>
+    
+    <!-- Contact Form -->
+    <form action="submit_form.php" method="POST" class="contact__form">
+        <label for="email" class="contact__label">Email Address:</label>
+        <input type="email" id="email" name="email" class="contact__input" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn--primary">Submit</button>
+    </form>
+</section>
 
     <!-- Footer -->
     <footer class="footer">

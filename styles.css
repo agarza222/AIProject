@@ -1,8 +1,8 @@
 /* General Colors */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f5f7;
-    color: #333;
+    background-color: #191915;
+    color: #FFFFFF;
 }
 
 /* Header */
@@ -26,7 +26,7 @@ body {
 }
 
 .header__logo-img {
-    width: 60px;
+    width:80px;
     height: auto;
 }
 
@@ -48,16 +48,17 @@ body {
     color: #E1306C;
 }
 
+/* Contact Us Button */
 .header__link--cta {
     color: #ffffff;
-    background-color: #405DE6;
+    background-color: #f77737; /* Instagram orange */
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .header__link--cta:hover {
-    background-color: #344CB7;
+    background-color: #0F75BD; /* shade of blue  */
 }
 
 /* Hero */
@@ -78,17 +79,18 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Schedule a Consultation Button */
 .btn--primary {
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
-    background-color: #015BE7;
+    background-color: #f77737; /* Instagram orange */
     color: #ffffff;
     font-weight: bold;
     transition: all 0.2s;
 }
 
 .btn--primary:hover {
-    background-color: #E1306C;
+    background-color: #0F75BD; /* Slightly darker shade of orange */
     transform: scale(1.05);
 }
 
@@ -107,23 +109,50 @@ body {
 /* About Section */
 .about__items {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     margin-top: 2rem;
 }
 
 .about__item {
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    font-size: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 200px;
+    height: 300px;
 }
 
 .about__item:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: #E1306C;
+}
+
+.about__item-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #405DE6;
+}
+
+.about__item-description {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.4;
 }
 
 /* Services Section with Flip Card Animation */
@@ -131,6 +160,12 @@ body {
     display: flex;
     gap: 2rem;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem 0;
 }
 
 .card {
@@ -138,6 +173,8 @@ body {
     width: 240px;
     height: 350px;
     position: relative;
+    transform-style: preserve-3d;
+    margin: 1rem;
 }
 
 .card__front, .card__back {
@@ -187,6 +224,7 @@ body {
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .testimonial {
@@ -207,6 +245,40 @@ body {
     color: #405DE6;
     text-align: right;
     margin-top: 1rem;
+}
+
+/* Apparel Section Styling */
+.portfolio__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.portfolio__item {
+    width: 3in;
+    height: 3in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio__item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio__image {
+    width: 90%; /* Scale the SVG */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure SVG scales proportionally */
+    padding: 0.5rem;
+    border-radius: 4px;
 }
 
 /* Footer */
@@ -273,6 +345,3 @@ body {
 
     .services__grid {
         flex-direction: column;
-        align-items: center;
-    }
-}
