@@ -139,33 +139,45 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section contact">
-    <h2 class="section__title"><strong>Get in Touch</strong></h2>
-    <p class="section__description">Ready to elevate your brand? Fill out the form below and let us know how we can help you!</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2 class="section__title"><strong>Get in Touch</strong></h2>
+        <p class="section__description">Ready to elevate your brand? Fill out the form below and let us know how we can help you!</p>
+        
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/mnnqgrgo" method="POST" class="contact__form">
+    <!-- Redirect to Thank-You Page -->
+    <input type="hidden" name="_redirect" value="https://agarza222.github.io/AIProject/thankyou.html">
+
+    <!-- First Name -->
+    <label for="first-name" class="contact__label">First Name:</label>
+    <input type="text" id="first-name" name="first_name" class="contact__input" placeholder="Enter your first name" required>
     
-    <!-- Contact Form -->
-    <form action="submit_form.php" method="POST" class="contact__form">
-        <!-- First Name -->
-        <label for="first-name" class="contact__label">First Name:</label>
-        <input type="text" id="first-name" name="first_name" class="contact__input" placeholder="Enter your first name" required>
-        
-        <!-- Last Name -->
-        <label for="last-name" class="contact__label">Last Name:</label>
-        <input type="text" id="last-name" name="last_name" class="contact__input" placeholder="Enter your last name" required>
-        
-        <!-- Contact Info -->
-        <label for="contact-info" class="contact__label">Contact Info (Email or Phone):</label>
-        <input type="text" id="contact-info" name="contact_info" class="contact__input" placeholder="Enter your email or phone number" required>
-        
-        <!-- What They Need -->
-        <label for="details" class="contact__label">Tell us what you need:</label>
-        <textarea id="details" name="details" class="contact__textarea" placeholder="Describe what you're looking for..." required></textarea>
-        
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn--primary">Submit</button>
-    </form>
-</section>
+    <!-- Last Name -->
+    <label for="last-name" class="contact__label">Last Name:</label>
+    <input type="text" id="last-name" name="last_name" class="contact__input" placeholder="Enter your last name" required>
+    
+    <!-- Contact Info -->
+    <label for="contact-info" class="contact__label">Contact Info (Email or Phone):</label>
+    <input type="text" id="contact-info" name="contact_info" class="contact__input" placeholder="Enter your email or phone number" required>
+    
+    <!-- Appointment Date -->
+    <label for="appointment-date" class="contact__label">Preferred Appointment Date:</label>
+    <input type="date" id="appointment-date" name="appointment_date" class="contact__input" required>
+
+    <!-- Appointment Time -->
+    <label for="appointment-time" class="contact__label">Preferred Appointment Time:</label>
+    <input type="time" id="appointment-time" name="appointment_time" class="contact__input" required>
+    
+    <!-- What They Need -->
+    <label for="details" class="contact__label">Tell us what you need:</label>
+    <textarea id="details" name="details" class="contact__textarea" placeholder="Describe what you're looking for..." required></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn--primary">Submit</button>
+</form>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <p class="footer__text">© 2022 Take Flight Creative Services</p>

@@ -58,7 +58,7 @@ body {
 }
 
 .header__link--cta:hover {
-    background-color: #0F75BD; /* shade of blue  */
+    background-color: #0F75BD; /* shade of blue */
 }
 
 /* Hero */
@@ -343,4 +343,7 @@ body {
 }
 
 .contact__input,
-.contact__textarea
+.contact__textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1
