@@ -11,7 +11,7 @@
     <header class="header">
         <div class="header__logo">
             <img src="images/tftrocket.svg" alt="Take Flight Logo" class="header__logo-img">
-            <span class="header__logo-text">Take Flight Creative Services&nbsp; &nbsp;&nbsp;</span>
+            <span class="header__logo-text">Take Flight Creative Services</span>
         </div>
         <nav class="header__nav">
             <a href="#about" class="header__link">About</a>
@@ -33,7 +33,7 @@
 
     <!-- About Section -->
     <section id="about" class="section about">
-        <h2 class="section__title">Why Choose Take Flight?</h2>
+        <h2 class="section__title">About Us: Why Choose Take Flight?</h2>
         <p class="section__description">
             We specialize in unique content strategies designed to amplify your brand’s voice and engage your audience.
         </p>
@@ -60,31 +60,54 @@
     <section id="services" class="section services">
         <h2 class="section__title">Our Services</h2>
         <div class="services__grid">
+            <!-- Card 1 -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/strategy.jpeg" alt="Social Media Strategy" class="card__image">
                     <h3 class="card__title">Social Media Strategy</h3>
+                    <p class="card__text">Crafted plans to boost engagement and grow your brand.</p>
                 </div>
                 <div class="card__back">
-                    <p class="card__description">Boost your engagement and reach with custom strategies.</p>
+                    <h4 class="card__back-title">What We Offer</h4>
+                    <ul class="card__list">
+                        <li>Custom strategies tailored to your goals</li>
+                        <li>Data-driven insights for growth</li>
+                        <li>Comprehensive social media audits</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Card 2 -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/contentcreation.jpg" alt="Content Creation" class="card__image">
                     <h3 class="card__title">Content Creation</h3>
+                    <p class="card__text">Engaging visuals and storytelling for your brand.</p>
                 </div>
                 <div class="card__back">
-                    <p class="card__description">Creative visuals and posts that resonate with your audience.</p>
+                    <h4 class="card__back-title">What We Offer</h4>
+                    <ul class="card__list">
+                        <li>Creative posts for social media</li>
+                        <li>Custom graphics and videos</li>
+                        <li>Platform-specific content</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Card 3 -->
             <div class="card">
                 <div class="card__front">
                     <img src="images/smconsulting.jpg" alt="Brand Consulting" class="card__image">
                     <h3 class="card__title">Brand Consulting</h3>
+                    <p class="card__text">Guidance to define and elevate your brand identity.</p>
                 </div>
                 <div class="card__back">
-                    <p class="card__description">Define and strengthen your brand identity with expert advice.</p>
+                    <h4 class="card__back-title">What We Offer</h4>
+                    <ul class="card__list">
+                        <li>Brand strategy development</li>
+                        <li>Market positioning advice</li>
+                        <li>Ongoing support and feedback</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -116,19 +139,33 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
+<!-- Contact Section -->
+<section id="contact" class="section contact">
     <h2 class="section__title"><strong>Get in Touch</strong></h2>
-    <p class="section__description">Ready to elevate your brand? Contact us for a free consultation or sign up for updates below.</p>
+    <p class="section__description">Ready to elevate your brand? Fill out the form below and let us know how we can help you!</p>
     
     <!-- Contact Form -->
     <form action="submit_form.php" method="POST" class="contact__form">
-        <label for="email" class="contact__label">Email Address:</label>
-        <input type="email" id="email" name="email" class="contact__input" placeholder="Enter your email" required>
+        <!-- First Name -->
+        <label for="first-name" class="contact__label">First Name:</label>
+        <input type="text" id="first-name" name="first_name" class="contact__input" placeholder="Enter your first name" required>
+        
+        <!-- Last Name -->
+        <label for="last-name" class="contact__label">Last Name:</label>
+        <input type="text" id="last-name" name="last_name" class="contact__input" placeholder="Enter your last name" required>
+        
+        <!-- Contact Info -->
+        <label for="contact-info" class="contact__label">Contact Info (Email or Phone):</label>
+        <input type="text" id="contact-info" name="contact_info" class="contact__input" placeholder="Enter your email or phone number" required>
+        
+        <!-- What They Need -->
+        <label for="details" class="contact__label">Tell us what you need:</label>
+        <textarea id="details" name="details" class="contact__textarea" placeholder="Describe what you're looking for..." required></textarea>
+        
+        <!-- Submit Button -->
         <button type="submit" class="btn btn--primary">Submit</button>
     </form>
 </section>
-
     <!-- Footer -->
     <footer class="footer">
         <p class="footer__text">© 2022 Take Flight Creative Services</p>
