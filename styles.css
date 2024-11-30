@@ -163,24 +163,19 @@ body {
 
 /* Services Section with Flip Card Animation */
 .services__grid {
-    display: flex; /* Enable Flexbox layout */
+    display: flex;
     flex-wrap: wrap; /* Allow wrapping of cards */
     justify-content: center; /* Center the cards horizontally */
-    gap: 1.5rem; /* Add spacing between cards */
+    gap: 2rem; /* Add proper spacing between the cards */
     margin: 0 auto; /* Center the grid */
-    width: 100%; /* Ensure it spans full width */
-    max-width: 1200px; /* Limit maximum width */
-    padding: 2rem 0; /* Space around the grid */
+    padding: 2rem 1rem; /* Add padding inside the grid */
 }
 
-/* Card Styling */
 .card {
-    perspective: 1000px;
-    width: 240px;
+    width: 240px; /* Ensure a consistent width */
     height: 350px;
+    margin: 0 auto; /* Center each card individually */
     position: relative;
-    transform-style: preserve-3d;
-    margin: 0 auto; /* Center each card */
 }
 
 .card__front, .card__back {
@@ -340,17 +335,19 @@ body {
     font-size: 1rem
 }
 @media (max-width: 768px) {
+    .services__grid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align the cards */
+        gap: 2rem; /* Add more space between the cards */
+    }
+
     .card {
-        width: 90%; /* Make cards take most of the screen width */
-        max-width: 300px; /* Prevent cards from becoming too large */
-        margin: 0 auto; /* Center the cards on the page */
+        width: 90%; /* Ensure cards take up most of the screen width */
+        max-width: 300px; /* Prevent cards from being too wide */
+        margin: 0 auto; /* Center each card */
     }
 
     .card__image {
         height: auto; /* Ensure images resize proportionally */
-    }
-
-    .services__grid {
-        gap: 1rem; /* Adjust spacing between cards */
     }
 }
