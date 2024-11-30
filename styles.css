@@ -158,14 +158,13 @@ body {
 /* Services Section with Flip Card Animation */
 .services__grid {
     display: flex; /* Enable Flexbox layout */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: center; /* Align the cards vertically */
     flex-wrap: wrap; /* Allow wrapping of cards */
-    gap: 2rem; /* Add space between cards */
-    margin: 0 auto; /* Center the entire grid */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 1.5rem; /* Add spacing between cards */
+    margin: 0 auto; /* Center the grid */
     width: 100%; /* Ensure it spans full width */
     max-width: 1200px; /* Limit maximum width */
-    padding: 2rem 0;
+    padding: 2rem 0; /* Space around the grid */
 }
 
 /* Card Styling */
@@ -333,4 +332,19 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem
+}
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Make cards take most of the screen width */
+        max-width: 300px; /* Prevent cards from becoming too large */
+        margin: 0 auto; /* Center the cards on the page */
+    }
+
+    .card__image {
+        height: auto; /* Ensure images resize proportionally */
+    }
+
+    .services__grid {
+        gap: 1rem; /* Adjust spacing between cards */
+    }
 }
