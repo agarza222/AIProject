@@ -32,14 +32,14 @@ body {
 
 .header__nav {
     display: flex;
-    flex-wrap: wrap; /* Enable wrapping of navigation items */
-    justify-content: center; /* Center navigation items */
-    gap: 1rem; /* Space between nav links */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .header__link--cta {
-    flex-shrink: 0; /* Prevent shrinking of the "Contact Us" button */
-    white-space: nowrap; /* Prevent wrapping of text inside the button */
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .header__link {
@@ -67,7 +67,7 @@ body {
     background-color: #0F75BD; /* shade of blue */
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
     background: linear-gradient(135deg, rgba(64, 93, 230, 0.8), rgba(225, 48, 108, 0.8)), url("images/cowomen.jpg") center/cover no-repeat;
     color: #ffffff;
@@ -96,7 +96,7 @@ body {
 }
 
 .btn--primary:hover {
-    background-color: #0F75BD; /* Slightly darker shade of orange */
+    background-color: #0F75BD;
     transform: scale(1.05);
 }
 
@@ -164,33 +164,47 @@ body {
 /* Services Section with Flip Card Animation */
 .services__grid {
     display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap */
-    justify-content: center; /* Center cards */
-    gap: 2rem; /* Add spacing between cards */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     margin: 0 auto;
-    padding: 1.5rem; /* Add padding around the grid */
+    padding: 1.5rem;
 }
 
 @media (max-width: 768px) {
     .services__grid {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center the cards */
-        gap: 2.5rem; /* Increase space between cards on mobile */
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem; /* Increased space between cards on mobile */
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        width: 90%; /* Ensure cards take up most of the screen width */
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
 .card {
-    width: 240px; /* Ensure a consistent width */
+    width: 240px;
     height: 350px;
-    margin: 0 auto; /* Center each card individually */
+    margin: 0 auto;
     position: relative;
+    perspective: 1000px; /* Enable 3D flip effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.card__front, .card__back {
+.card__front,
+.card__back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Ensures the back face is hidden when not visible */
+    backface-visibility: hidden;
     padding: 1.5rem;
     border-radius: 8px;
     background-color: #ffffff;
@@ -198,40 +212,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    transition: transform 0.3s ease; /* Smooth flipping */
+    justify-content: space-between;
+    transition: transform 0.3s ease;
 }
 
 .card__front {
-    z-index: 2; /* Ensures the front is on top initially */
-    transform: rotateY(0deg); /* Default state for the front */
+    z-index: 2;
+    transform: rotateY(0deg);
 }
 
 .card__back {
-    transform: rotateY(180deg); /* Default state for the back (hidden) */
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Center-align text and content */
+    text-align: center;
 }
+
 .card__pricing {
     margin-top: 1rem;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #E1306C; /* Use a color that fits your brand */
+    color: #E1306C;
     text-align: center;
 }
 
-/* Flip Effect */
 .card:hover .card__front {
-    transform: rotateY(-180deg); /* Flip front to hide */
+    transform: rotateY(-180deg);
 }
 
 .card:hover .card__back {
-    transform: rotateY(0deg); /* Flip back to show */
+    transform: rotateY(0deg);
 }
-/* Card Front Styling */
+
 .card__image {
     width: 100%;
     height: 150px;
@@ -328,6 +342,18 @@ body {
 
 .contact__label {
     font-size: 1rem;
+}
+/* Contact Form Styling */
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact__label {
+    font-size: 1rem;
     font-weight: bold;
     color: #405DE6;
     margin-bottom: 0.5rem;
@@ -340,22 +366,24 @@ body {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem
+    font-size: 1rem;
 }
-@media (max-width: 768px) {
-    .services__grid {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center-align the cards */
-        gap: 2rem; /* Add more space between the cards */
-    }
 
-    .card {
-        width: 90%; /* Ensure cards take up most of the screen width */
-        max-width: 300px; /* Prevent cards from being too wide */
-        margin: 0 auto; /* Center each card */
-    }
+.contact__textarea {
+    height: 150px; /* Set height for the textarea */
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
 
-    .card__image {
-        height: auto; /* Ensure images resize proportionally */
-    }
+.contact__button {
+    padding: 1rem 2rem;
+    background-color: #E1306C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact__button:hover {
+    background-color: #0F75BD; /* Hover effect for the button */
 }
