@@ -164,11 +164,19 @@ body {
 /* Services Section with Flip Card Animation */
 .services__grid {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping of cards */
-    justify-content: center; /* Center the cards horizontally */
-    gap: 2rem; /* Add proper spacing between the cards */
-    margin: 0 auto; /* Center the grid */
-    padding: 2rem 1rem; /* Add padding inside the grid */
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center cards */
+    gap: 2rem; /* Add spacing between cards */
+    margin: 0 auto;
+    padding: 1.5rem; /* Add padding around the grid */
+}
+
+@media (max-width: 768px) {
+    .services__grid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center the cards */
+        gap: 2.5rem; /* Increase space between cards on mobile */
+    }
 }
 
 .card {
