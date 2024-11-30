@@ -346,4 +346,37 @@ body {
 
     .header__nav {
         flex-direction: column;
-        align
+        align-items: center; /* Center nav links on mobile */
+        gap: 0.5rem;
+    }
+
+    .services__grid {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center align the cards */
+        gap: 1rem;
+    }
+
+    .card {
+        width: 100%; /* Make the cards full width on mobile */
+        max-width: 300px; /* Limit the width for better appearance */
+        height: auto; /* Allow cards to adjust height based on content */
+    }
+
+    .card__image {
+        height: auto; /* Ensure the image scales proportionally */
+    }
+
+    .about__items {
+        flex-direction: column; /* Stack about items vertically */
+        gap: 1.5rem;
+    }
+
+    .portfolio__gallery {
+        flex-direction: column; /* Stack portfolio items vertically */
+        gap: 1.5rem;
+    }
+
+    .testimonial {
+        max-width: 100%; /* Expand testimonials to fit screen width */
+    }
+}
