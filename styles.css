@@ -53,7 +53,7 @@ body {
     color: #ffffff;
     background-color: #f77737; /* Instagram orange */
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: background-color 0.3s;
 }
 
@@ -157,14 +157,14 @@ body {
 
 /* Services Section with Flip Card Animation */
 .services__grid {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
+    display: flex; /* Enable Flexbox layout */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Align the cards vertically */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    gap: 2rem; /* Add space between cards */
+    margin: 0 auto; /* Center the entire grid */
+    width: 100%; /* Ensure it spans full width */
+    max-width: 1200px; /* Limit maximum width */
     padding: 2rem 0;
 }
 
@@ -175,14 +175,14 @@ body {
     height: 350px;
     position: relative;
     transform-style: preserve-3d;
-    margin: 1rem;
+    margin: 0 auto; /* Center each card */
 }
 
 .card__front, .card__back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Ensures the back face is hidden when not visible */
     padding: 1.5rem;
     border-radius: 8px;
     background-color: #ffffff;
@@ -191,33 +191,38 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease; /* Smooth flipping */
 }
 
 .card__front {
-    z-index: 2;
-    transform: rotateY(0deg);
+    z-index: 2; /* Ensures the front is on top initially */
+    transform: rotateY(0deg); /* Default state for the front */
 }
 
 .card__back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Default state for the back (hidden) */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    text-align: left;
-    padding: 1.5rem;
+    text-align: center; /* Center-align text and content */
+}
+.card__pricing {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #E1306C; /* Use a color that fits your brand */
+    text-align: center;
 }
 
-/* Card Flip */
+/* Flip Effect */
 .card:hover .card__front {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg); /* Flip front to hide */
 }
 
 .card:hover .card__back {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg); /* Flip back to show */
 }
-
 /* Card Front Styling */
 .card__image {
     width: 100%;
@@ -327,56 +332,26 @@ body {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1rem
+}
+/* Back to Top Button */
+.back-to-top {
+    background-color: #E1306C; /* Instagram pink */
+    color: #ffffff; /* White text for contrast */
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px; /* Rounded shape */
+    text-decoration: none;
     font-size: 1rem;
+    font-weight: bold;
+    position: fixed;
+    bottom: 20px; /* Adjust position from the bottom */
+    right: 20px; /* Adjust position from the right */
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Responsive Fix for Mobile Screens */
-@media (max-width: 768px) {
-    .header {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 1rem;
-    }
-
-    .header__logo {
-        width: 100%;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    .header__nav {
-        flex-direction: column;
-        align-items: center; /* Center nav links on mobile */
-        gap: 0.5rem;
-    }
-
-    .services__grid {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
-        align-items: center; /* Center align the cards */
-        gap: 1rem;
-    }
-
-    .card {
-        width: 100%; /* Make the cards full width on mobile */
-        max-width: 300px; /* Limit the width for better appearance */
-        height: auto; /* Allow cards to adjust height based on content */
-    }
-
-    .card__image {
-        height: auto; /* Ensure the image scales proportionally */
-    }
-
-    .about__items {
-        flex-direction: column; /* Stack about items vertically */
-        gap: 1.5rem;
-    }
-
-    .portfolio__gallery {
-        flex-direction: column; /* Stack portfolio items vertically */
-        gap: 1.5rem;
-    }
-
-    .testimonial {
-        max-width: 100%; /* Expand testimonials to fit screen width */
-    }
+/* Hover Effect for Back to Top */
+.back-to-top:hover {
+    background-color: #C12C58; /* Slightly darker pink for hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
