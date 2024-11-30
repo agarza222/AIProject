@@ -32,8 +32,14 @@ body {
 
 .header__nav {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    flex-wrap: wrap; /* Enable wrapping of navigation items */
+    justify-content: center; /* Center navigation items */
+    gap: 1rem; /* Space between nav links */
+}
+
+.header__link--cta {
+    flex-shrink: 0; /* Prevent shrinking of the "Contact Us" button */
+    white-space: nowrap; /* Prevent wrapping of text inside the button */
 }
 
 .header__link {
