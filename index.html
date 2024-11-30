@@ -189,35 +189,35 @@
     <footer class="footer">
         <p class="footer__text">© 2022 Take Flight Creative Services</p>
     </footer>
-    <script>
-        // Prevent the page from automatically scrolling to #contact on load
-        window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash === '#contact') {
-                // Remove the hash and reset the scroll position to the top
-                history.replaceState(null, null, ' ');
-                window.scrollTo(0, 0);
-            }
-        });
+<script>
+    // Prevent the page from automatically scrolling to #contact on load
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.location.hash === '#contact') {
+            // Remove the hash and reset the scroll position to the top
+            history.replaceState(null, null, ' ');
+            window.scrollTo(0, 0);
+        }
+    });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-
-        // Card flipping functionality
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('is-flipped'); /* Toggle flip state */
-            });
+    });
+</script>
+  <!-- Back to top -->
+	<a href="#top" class="back-to-top" id="backToTop">↑ Back to Top</a>
+	<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('is-flipped'); /* Toggle flip state */
         });
-    </script>
-
-    <!-- Back to top -->
-    <a href="#top" class="back-to-top" id="backToTop">↑ Back to Top</a>
+    });
+</script>
+	
 </body>
 </html>
