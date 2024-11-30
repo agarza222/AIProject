@@ -3,6 +3,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #191915;
     color: #FFFFFF;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
@@ -40,6 +42,15 @@ body {
 .header__link--cta {
     flex-shrink: 0;
     white-space: nowrap;
+    color: #ffffff;
+    background-color: #f77737; /* Instagram orange */
+    padding: 0.5rem 1.25rem;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.header__link--cta:hover {
+    background-color: #0F75BD; /* Blue on hover */
 }
 
 .header__link {
@@ -52,19 +63,6 @@ body {
 
 .header__link:hover {
     color: #E1306C;
-}
-
-/* Contact Us Button */
-.header__link--cta {
-    color: #ffffff;
-    background-color: #f77737; /* Instagram orange */
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
-
-.header__link--cta:hover {
-    background-color: #0F75BD; /* shade of blue */
 }
 
 /* Hero Section */
@@ -161,7 +159,7 @@ body {
     line-height: 1.4;
 }
 
-/* Services Section with Flip Card Animation */
+/* Services Section */
 .services__grid {
     display: flex;
     flex-wrap: wrap;
@@ -169,21 +167,6 @@ body {
     gap: 2rem;
     margin: 0 auto;
     padding: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .services__grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem; /* Increased space between cards on mobile */
-        padding: 2rem 1rem;
-    }
-
-    .card {
-        width: 90%; /* Ensure cards take up most of the screen width */
-        max-width: 300px;
-        margin: 0 auto;
-    }
 }
 
 .card {
@@ -229,6 +212,14 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+/* List Styling */
+.card__list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 .card__pricing {
@@ -343,75 +334,6 @@ body {
 
 .contact__label {
     font-size: 1rem;
-}
-/* Contact Form Styling */
-.contact__form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact__label {
-    font-size: 1rem;
     font-weight: bold;
     color: #405DE6;
-    margin-bottom: 0.5rem;
-    text-align: left;
-}
-
-.contact__input,
-.contact__textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.contact__textarea {
-    height: 150px; /* Set height for the textarea */
-    resize: vertical; /* Allow vertical resizing of the textarea */
-}
-
-.contact__button {
-    padding: 1rem 2rem;
-    background-color: #E1306C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact__button:hover {
-    background-color: #0F75BD; /* Hover effect for the button */
-}
-@media (max-width: 768px) {
-    .services__grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem; /* Increased space between cards on mobile */
-        padding: 2rem 1rem;
-    }
-
-    .card {
-        width: 100%; /* Cards take up most of the screen width on mobile */
-        max-width: 350px; /* You can adjust the max-width for better mobile presentation */
-        margin: 0 auto;
-    }
-}
-@media (max-width: 768px) {
-    .card__title {
-        font-size: 1.1rem; /* Slightly smaller title on mobile */
-    }
-
-    .card__text {
-        font-size: 0.85rem; /* Adjust text size on mobile */
-    }
-
-    .card__pricing {
-        font-size: 1rem; /* Smaller pricing text */
-    }
-}
+    margin-bottom: 0.
