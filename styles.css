@@ -195,6 +195,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d; /* Preserve 3D for flip animation */
 }
 
 .card__front,
@@ -386,4 +387,31 @@ body {
 
 .contact__button:hover {
     background-color: #0F75BD; /* Hover effect for the button */
+}
+@media (max-width: 768px) {
+    .services__grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem; /* Increased space between cards on mobile */
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        width: 100%; /* Cards take up most of the screen width on mobile */
+        max-width: 350px; /* You can adjust the max-width for better mobile presentation */
+        margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    .card__title {
+        font-size: 1.1rem; /* Slightly smaller title on mobile */
+    }
+
+    .card__text {
+        font-size: 0.85rem; /* Adjust text size on mobile */
+    }
+
+    .card__pricing {
+        font-size: 1rem; /* Smaller pricing text */
+    }
 }
