@@ -116,49 +116,71 @@
             </div>
         </div>
     </section>
+	   <!-- Apparel Section -->
+    <section id="portfolio" class="section portfolio">
+        <h2 class="section__title">Apparel</h2>
+        <p class="section__description">Take Flight T-shirts and Hoodies.</p>
+        <div class="portfolio__gallery">
+            <div class="portfolio__item">
+                <img src="images/takeflightapparel.svg" alt="Take Flight Apparel" class="portfolio__image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <h2 class="section__title">What Our Clients Say</h2>
+        <div class="testimonials__grid">
+            <blockquote class="testimonial">
+                <p>"Take Flight transformed our online presence. Highly recommend!"</p>
+                <footer>- Beth J</footer>
+            </blockquote>
+            <blockquote class="testimonial">
+                <p>"Incredible service and creativity. They understand our brand."</p>
+                <footer>- Meshell C</footer>
+            </blockquote>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-   <section id="contact" class="section contact">
-    <h2 class="section__title"><strong>Get in Touch</strong></h2>
-    <p class="section__description">Ready to elevate your brand? Fill out the form below and let us know how we can help you!</p>
-    
-    <!-- Contact Form -->
-    <form action="https://formspree.io/f/mnnqgrgo" method="POST" class="contact__form">
-        <!-- Redirect to Thank-You Page -->
-        <input type="hidden" name="_redirect" value="https://agarza222.github.io/AIProject/thankyou.html">
+    <section id="contact" class="section contact">
+        <h2 class="section__title contact__title"><strong>Get in Touch</strong></h2>
+        <p class="section__description contact__description"><strong><em>Ready to elevate your brand? Fill out the form below and let us know how we can help you!</em></strong></p>
+        
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/mnnqgrgo" method="POST" class="contact__form">
+            <!-- First Name -->
+            <label for="first-name" class="contact__label">First Name:</label>
+            <input type="text" id="first-name" name="first_name" class="contact__input" placeholder="Enter your first name" required>
 
-        <!-- First Name -->
-        <label for="first-name" class="contact__label">First Name:</label>
-        <input type="text" id="first-name" name="first_name" class="contact__input" placeholder="Enter your first name" required>
-        
-        <!-- Last Name -->
-        <label for="last-name" class="contact__label">Last Name:</label>
-        <input type="text" id="last-name" name="last_name" class="contact__input" placeholder="Enter your last name" required>
-        
-        <!-- Email -->
-        <label for="email" class="contact__label">Email:</label>
-        <input type="email" id="email" name="email" class="contact__input" placeholder="Enter your email" required>
-        
-        <!-- Phone -->
-        <label for="phone" class="contact__label">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" class="contact__input" placeholder="Enter your phone number">
-        
-        <!-- Appointment Date -->
-        <label for="appointment-date" class="contact__label">Preferred Appointment Date:</label>
-        <input type="date" id="appointment-date" name="appointment_date" class="contact__input" required>
+            <!-- Last Name -->
+            <label for="last-name" class="contact__label">Last Name:</label>
+            <input type="text" id="last-name" name="last_name" class="contact__input" placeholder="Enter your last name" required>
 
-        <!-- Appointment Time -->
-        <label for="appointment-time" class="contact__label">Preferred Appointment Time:</label>
-        <input type="time" id="appointment-time" name="appointment_time" class="contact__input" required>
-        
-        <!-- What They Need -->
-        <label for="details" class="contact__label">Tell us what you need:</label>
-        <textarea id="details" name="details" class="contact__textarea" placeholder="Describe what you're looking for..." required></textarea>
+            <!-- Email -->
+            <label for="email" class="contact__label">Email:</label>
+            <input type="email" id="email" name="email" class="contact__input" placeholder="Enter your email" required>
 
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn--primary">Submit</button>
-    </form>
-</section>
+            <!-- Phone -->
+            <label for="phone" class="contact__label">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" class="contact__input" placeholder="Enter your phone number">
+
+            <!-- Appointment Date -->
+            <label for="appointment-date" class="contact__label">Preferred Appointment Date:</label>
+            <input type="date" id="appointment-date" name="appointment_date" class="contact__input" required>
+
+            <!-- Appointment Time -->
+            <label for="appointment-time" class="contact__label">Preferred Appointment Time:</label>
+            <input type="time" id="appointment-time" name="appointment_time" class="contact__input" required>
+
+            <!-- What They Need -->
+            <label for="details" class="contact__label">Tell us what you need:</label>
+            <textarea id="details" name="details" class="contact__textarea" placeholder="Describe what you're looking for..." required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn--primary">Submit</button>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -166,7 +188,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#top" class="back-to-top" id="backToTop"> ↑ GO TO TOP </a>
+    <a href="#top" id="backToTop"> ↑ TO TOP </a>
 
     <script>
         // Show back to top button when the user scrolls down
@@ -184,6 +206,4 @@
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
-</body>
-</html>
+   

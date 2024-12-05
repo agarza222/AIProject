@@ -163,24 +163,61 @@ body {
 .services__grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0 auto;
+    justify-content: center;  /* Center the cards horizontally */
+    gap: 1.5rem;  /* Adjust the gap for more space between cards */
     padding: 1.5rem;
+    margin: 0 auto;
+    width: 100%;  /* Ensure the container takes up the full width */
 }
 
+/* Card Styling */
 .card {
-    width: 240px;
-    height: 350px;
+    width: 280px;  /* Adjusted card width */
+    height: 350px;  /* Fixed height for cards */
     margin: 0 auto;
     position: relative;
-    perspective: 1000px; /* Enable 3D flip effect */
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-style: preserve-3d; /* Preserve 3D for flip animation */
+    flex-direction: column;
+    box-sizing: border-box;
+    perspective: 1000px;
 }
 
+/* Media Queries for Larger Screens */
+@media (min-width: 1200px) {
+    .services__grid {
+        justify-content: space-between;  /* Spread out the cards more evenly */
+        gap: 2rem;  /* Increase space between cards for larger screens */
+    }
+
+    .card {
+        width: 22%;  /* Cards will take up less space on larger screens */
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .services__grid {
+        justify-content: center;  /* Keep cards centered */
+        gap: 1rem;  /* Reduce the gap for mobile */
+    }
+
+    .card {
+        width: 100%;  /* Full-width cards on mobile */
+        height: auto;  /* Let the height adjust based on content */
+    }
+}
+/* Card Image */
+.card__image {
+    width: 100%;        /* Ensure the image takes up 100% of the card’s width */
+    height: 150px;      /* Set a fixed height for the image */
+    object-fit: cover;  /* Ensures the image covers the space without stretching */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin-bottom: 1rem; /* Space below the image */
+}
+
+/* Front and Back of Card */
 .card__front,
 .card__back {
     position: absolute;
@@ -191,45 +228,31 @@ body {
     backface-visibility: hidden;
     padding: 1.5rem;
     border-radius: 8px;
-    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Horizontally center content inside */
+    justify-content: center; /* Vertically center content inside */
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
+/* Card Front */
 .card__front {
     z-index: 2;
     transform: rotateY(0deg);
+    background-color: #ffffff;  /* White background */
+    color: #333;  /* Dark text color for front */
 }
 
+/* Card Back */
 .card__back {
     transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-color: #405DE6;  /* Light orange background for the back */
+    color: #ffffff;  /* White text color for back */
 }
 
-/* List Styling */
-.card__list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 10px;
-    text-align: left;
-}
-
-.card__pricing {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #E1306C;
-    text-align: center;
-}
-
+/* Card Flip Effect */
 .card:hover .card__front {
     transform: rotateY(-180deg);
 }
@@ -238,25 +261,34 @@ body {
     transform: rotateY(0deg);
 }
 
-.card__image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
+/* Card Title */
 .card__title {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #405DE6;
-    text-align: center;
 }
 
+/* Card Text */
 .card__text {
     font-size: 0.9rem;
     color: #333;
+}
+
+/* Card List */
+.card__list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Card Pricing */
+.card__pricing {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F86194;
     text-align: center;
 }
 
@@ -296,74 +328,113 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 2rem; /* Space between the section and items */
 }
 
 .portfolio__item {
-    width: 3in;
-    height: 3in;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
+    width: 250px; /* Control the size of the image container */
+    height: auto; /* Adjust the height based on image */
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevent image from spilling outside container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for items */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    display: flex;
+    justify-content: center; /* Center the image inside the container */
+    align-items: center;
 }
 
+/* Hover effect for portfolio items */
 .portfolio__item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 .portfolio__image {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
-    padding: 0.5rem;
-    border-radius: 4px;
+    width: 100%; /* Make image take up full width of the container */
+    height: auto; /* Keep the aspect ratio */
+    object-fit: contain; /* Ensures the image stays within bounds without distortion */
+    border-radius: 8px; /* Rounded corners */
 }
-
 /* Contact Form Styling */
 .contact__form {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: column;  /* Stack form elements vertically */
+    gap: 1.5rem;  /* Adds consistent spacing between form fields */
     max-width: 600px;
     margin: 0 auto;
+    padding: 2rem;  /* Padding to give space around the form */
+    background-color: #ffffff;  /* White background for form */
+    border-radius: 8px;  /* Rounded corners for a soft look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow for a card-like effect */
 }
 
+/* Form Label Styling */
 .contact__label {
     font-size: 1rem;
     font-weight: bold;
-    color: #405DE6;
+    color: #405DE6;  /* Light blue for labels */
     margin-bottom: 0.5rem;
-    text-align: left;
+    text-align: left;  /* Left-align labels */
 }
 
+/* Form Input and Textarea Styling */
 .contact__input,
 .contact__textarea {
-    width: 100%;
-    padding: 0.75rem;
-}
-/* Back to Top Button Styling */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #F2069E;  /* Change this to pink color */
-    color: white;
-    padding: 1rem;
-    border-radius: 50%;
+    width: 100%;  /* Ensure inputs and textareas fill the form's width */
+    padding: 1rem;  /* Adequate padding inside fields */
     font-size: 1rem;
-    text-align: center;
-    display: none;  /* Hidden by default */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 1000;
+    border: 2px solid #ccc;  /* Light border for inputs */
+    border-radius: 8px;  /* Rounded borders */
+    box-sizing: border-box;  /* Ensures padding is included in the width */
+    transition: border 0.3s ease;  /* Smooth transition for border */
 }
 
-/* Hover effect for Back to Top button */
-.back-to-top:hover {
-    background-color: #E1306C; /* Pink on hover */
-    transform: scale(1.1);
+/* Textarea specific styling */
+.contact__textarea {
+    min-height: 150px;  /* Taller textarea */
+    resize: vertical;  /* Let users resize it vertically */
 }
+
+/* Form Field Focus Styling */
+.contact__input:focus,
+.contact__textarea:focus {
+    border-color: #E1306C;  /* Instagram pink border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(225, 48, 108, 0.3);  /* Soft shadow when focused */
+}
+
+/* Submit Button Styling */
+.btn--primary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    background-color: #f77737;  /* Instagram orange */
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    align-self: center;  /* Center the button */
+    border: none;
+    cursor: pointer;
+}
+
+.btn--primary:hover {
+    background-color: #0F75BD;  /* Hover effect with blue */
+    transform: scale(1.05);  /* Slight scale-up on hover */
+}
+
+/* Contact Section Title and Description */
+.contact__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #405DE6;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact__description {
+    font-size: 1rem;
+    color: #F7F7F7;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
