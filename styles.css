@@ -200,11 +200,12 @@ body {
 @media (max-width: 768px) {
     .services__grid {
         justify-content: center;  /* Keep cards centered */
-        gap: 1rem;  /* Reduce the gap for mobile */
+        gap: 2rem;  /* Reduce the gap for mobile */
     }
 
     .card {
         width: 100%;  /* Full-width cards on mobile */
+        max-width: 350px;  /* Add max-width to prevent cards from becoming too wide */
         height: auto;  /* Let the height adjust based on content */
     }
 }
