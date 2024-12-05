@@ -208,6 +208,7 @@ body {
         height: auto;  /* Let the height adjust based on content */
     }
 }
+
 /* Card Image */
 .card__image {
     width: 100%;        /* Ensure the image takes up 100% of the card’s width */
@@ -356,6 +357,7 @@ body {
     object-fit: contain; /* Ensures the image stays within bounds without distortion */
     border-radius: 8px; /* Rounded corners */
 }
+
 /* Contact Form Styling */
 .contact__form {
     display: flex;
@@ -437,6 +439,7 @@ body {
     margin-bottom: 2rem;
     text-align: center;
 }
+
 @media (max-width: 768px) {
     .hero__title {
         font-size: 2rem;
@@ -445,5 +448,3 @@ body {
         font-size: 1.5rem;
     }
 }
-
-
