@@ -165,14 +165,14 @@ body {
     flex-wrap: wrap;
     justify-content: center;  /* Center the cards horizontally */
     gap: 1.5rem;  /* Adjust the gap for more space between cards */
-    padding: 1.5rem;
+    padding: .5rem;
     margin: 0 auto;
     width: 100%;  /* Ensure the container takes up the full width */
 }
 
 /* Card Styling */
 .card {
-    width: 280px;  /* Adjusted card width */
+    width: 240px;  /* Adjusted card width */
     height: 350px;  /* Fixed height for cards */
     margin: 0 auto;
     position: relative;
@@ -437,4 +437,13 @@ body {
     margin-bottom: 2rem;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+    .section__title {
+        font-size: 1.5rem;
+    }
+}
+
 
