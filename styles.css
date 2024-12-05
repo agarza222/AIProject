@@ -44,6 +44,7 @@ body {
     white-space: nowrap;
     color: #ffffff;
     background-color: #f77737; /* Instagram orange */
+	
     padding: 0.5rem 1rem;
     border-radius: 10px;
     transition: background-color 0.3s;
@@ -113,7 +114,7 @@ body {
 /* About Section */
 .about__items {
     display: flex;
-    gap: 1.5rem;
+    gap: 5rem;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
@@ -125,14 +126,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 2rem;
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     width: 200px;
-    height: 300px;
+    height: 250px;
 }
 
 .about__item:hover {
@@ -162,18 +163,19 @@ body {
 /* Services Section */
 .services__grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;  /* Center the cards horizontally */
-    gap: 1.5rem;  /* Adjust the gap for more space between cards */
-    padding: .5rem;
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 2rem; /* Space between cards */
+    padding: 2rem;
     margin: 0 auto;
-    width: 100%;  /* Ensure the container takes up the full width */
+    width: 75%; 
+	
 }
 
 /* Card Styling */
 .card {
-    width: 240px;  /* Adjusted card width */
-    height: 350px;  /* Fixed height for cards */
+    width: 240px; /* Default width for cards on larger screens */
+    height: 350px; /* Fixed height for cards */
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -181,40 +183,43 @@ body {
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    perspective: 1000px;
+    perspective: 1000px; /* Enable 3D flip effect */
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* Media Queries for Larger Screens */
 @media (min-width: 1200px) {
     .services__grid {
-        justify-content: space-between;  /* Spread out the cards more evenly */
-        gap: 2rem;  /* Increase space between cards for larger screens */
+        justify-content: space-between; /* Spread out the cards evenly */
+        gap: 2rem; /* Larger gap between cards for larger screens */
     }
 
     .card {
-        width: 22%;  /* Cards will take up less space on larger screens */
+        width: 22%; /* Cards will take up 22% of the container's width */
+        max-width: 350px; /* Set a max width for the cards */
     }
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .services__grid {
-        justify-content: center;  /* Keep cards centered */
-        gap: 2rem;  /* Reduce the gap for mobile */
+        justify-content: center; /* Keep the cards centered */
+        gap: 1rem; /* Reduced gap between cards */
     }
 
     .card {
-        width: 100%;  /* Full-width cards on mobile */
-        max-width: 350px;  /* Add max-width to prevent cards from becoming too wide */
-        height: auto;  /* Let the height adjust based on content */
+        width: 100%; /* Full width on mobile */
+        max-width: 350px; /* Limit the width of the cards */
+        height: auto; /* Let the height adjust based on content */
+        margin-bottom: 1.5rem; /* Margin between stacked cards for mobile */
     }
 }
 
 /* Card Image */
 .card__image {
-    width: 100%;        /* Ensure the image takes up 100% of the card’s width */
-    height: 150px;      /* Set a fixed height for the image */
-    object-fit: cover;  /* Ensures the image covers the space without stretching */
+    width: 100%; /* Ensure the image takes up 100% of the card’s width */
+    height: 150px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the space without stretching */
     border-radius: 8px; /* Rounded corners for the image */
     margin-bottom: 1rem; /* Space below the image */
 }
@@ -230,11 +235,12 @@ body {
     backface-visibility: hidden;
     padding: 1.5rem;
     border-radius: 8px;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontally center content inside */
-    justify-content: center; /* Vertically center content inside */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -243,15 +249,15 @@ body {
 .card__front {
     z-index: 2;
     transform: rotateY(0deg);
-    background-color: #ffffff;  /* White background */
-    color: #333;  /* Dark text color for front */
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color for front */
 }
 
 /* Card Back */
 .card__back {
     transform: rotateY(180deg);
-    background-color: #405DE6;  /* Light orange background for the back */
-    color: #ffffff;  /* White text color for back */
+    background-color: #405DE6; /* Light blue background for the back */
+    color: #ffffff; /* White text color for back */
 }
 
 /* Card Flip Effect */
@@ -293,7 +299,6 @@ body {
     color: #F86194;
     text-align: center;
 }
-
 /* Testimonials Section */
 .testimonials__grid {
     display: flex;
