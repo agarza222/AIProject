@@ -190,21 +190,5 @@
 
     <!-- Back to Top Button -->
     <a href="#top" id="backToTop"> ↑ TO TOP </a>
-
-    <script>
-        // Show back to top button when the user scrolls down
-        window.addEventListener('scroll', function () {
-            const backToTopBtn = document.getElementById('backToTop');
-            if (window.scrollY > 200) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
-
-        // Smooth scroll to top when the back-to-top button is clicked
-        document.getElementById('backToTop').addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-   
+</body>
+</html>

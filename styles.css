@@ -162,31 +162,25 @@ body {
 
 /* Services Section */
 .services__grid {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping of cards */
-    justify-content: center; /* Center the cards horizontally */
-    gap: 2rem; /* Space between cards */
-    padding: 2rem;
-    margin: 0 auto;
-    width: 75%; 
-	
+    display: flex;               /* Enable Flexbox layout */
+    flex-wrap: wrap;             /* Allow cards to wrap to the next line */
+    justify-content: center;     /* Center the cards horizontally */
+    gap: 1.5rem;                 /* Space between cards */
+    padding: 2rem;               /* Padding inside the container */
+    margin: 0 auto;              /* Center the grid container */
+    width: 100%;                 /* Ensure it spans the full width */
+    max-width: 1200px;           /* Optional: Limit the max width */
+    box-sizing: border-box;      /* Include padding in width calculations */
 }
 
 /* Card Styling */
 .card {
-    width: 240px; /* Default width for cards on larger screens */
-    height: 350px; /* Fixed height for cards */
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    perspective: 1000px; /* Enable 3D flip effect */
-    flex-shrink: 0; /* Prevent shrinking */
+    width: calc(25% - 2rem); /* Four cards per row with 2rem gap */
+    max-width: 240px;        /* Ensure cards don't grow too large */
+    height: 350px;           /* Fixed height */
+    margin: 0 auto;          /* Center individual cards */
+    flex-shrink: 0;          /* Prevent cards from shrinking */
 }
-
 /* Media Queries for Larger Screens */
 @media (min-width: 1200px) {
     .services__grid {
@@ -203,18 +197,22 @@ body {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .services__grid {
-        justify-content: center; /* Keep the cards centered */
-        gap: 1rem; /* Reduced gap between cards */
+        display: flex;
+        flex-wrap: wrap; /* Ensure cards wrap properly */
+        flex-direction: row; /* Keep the flow in a single row before wrapping */
+        justify-content: center; /* Center the stacked cards */
+        gap: 1.5rem; /* Space between cards */
+        padding: 1rem;
     }
 
     .card {
-        width: 100%; /* Full width on mobile */
-        max-width: 350px; /* Limit the width of the cards */
-        height: auto; /* Let the height adjust based on content */
-        margin-bottom: 1.5rem; /* Margin between stacked cards for mobile */
+        width: calc(100% - 2rem); /* Full width minus padding/gap */
+        max-width: 350px; /* Ensure cards don't exceed max width */
+        height: auto; /* Let the height adjust dynamically */
+        margin: 0 auto; /* Center the cards horizontally */
+        position: relative; /* Reset position if it's set elsewhere */
     }
 }
-
 /* Card Image */
 .card__image {
     width: 100%; /* Ensure the image takes up 100% of the card’s width */
