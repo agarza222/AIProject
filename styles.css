@@ -175,12 +175,19 @@ body {
 
 /* Card Styling */
 .card {
-    width: calc(25% - 2rem); /* Four cards per row with 2rem gap */
-    max-width: 240px;        /* Ensure cards don't grow too large */
-    height: 350px;           /* Fixed height */
-    margin: 0 auto;          /* Center individual cards */
-    flex-shrink: 0;          /* Prevent cards from shrinking */
+    width: 240px; /* Default width for cards on larger screens */
+    height: 350px; /* Fixed height for cards */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    perspective: 1000px; /* Enable 3D flip effect */
+    flex-shrink: 0; /* Prevent shrinking */
 }
+
 /* Media Queries for Larger Screens */
 @media (min-width: 1200px) {
     .services__grid {
