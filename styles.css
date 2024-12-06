@@ -226,7 +226,7 @@ body {
     height: 150px; /* Set a fixed height for the image */
     object-fit: cover; /* Ensures the image covers the space without stretching */
     border-radius: 8px; /* Rounded corners for the image */
-    margin-bottom: 1rem; /* Space below the image */
+    margin-bottom: transform 0.3s ease; ; /* Space below the image */
 }
 
 /* Front and Back of Card */
