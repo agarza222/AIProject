@@ -32,3 +32,17 @@ $(document).ready(function() {
         return false; // Prevent default anchor click behavior
     });
 });
+// Add flip functionality for mobile
+document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => {
+        // Remove "flipped" class from all other cards
+        document.querySelectorAll('.card').forEach((otherCard) => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('flipped');
+            }
+        });
+
+        // Toggle "flipped" class on the current card
+        card.classList.toggle('flipped');
+    });
+});

@@ -234,14 +234,14 @@ body {
     z-index: 1;                 /* Ensure it shows properly after flipping */
 }
 
-/* Card Flip Effect for Hover */
+/* Flip Effect for Desktop (Hover) */
 .card:hover .card__inner {
-    transform: rotateY(180deg); /* Trigger flip on hover */
+    transform: rotateY(180deg); /* Flip on hover */
 }
 
-/* Card Flip Effect for Touch (Mobile) */
-.card:active .card__inner {
-    transform: rotateY(180deg); /* Trigger flip on touch */
+/* Flip Effect for Mobile (Using .flipped Class) */
+.card.flipped .card__inner {
+    transform: rotateY(180deg); /* Flip when .flipped is added */
 }
 
 /* Card Image */
