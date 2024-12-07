@@ -295,18 +295,24 @@ body {
         display: flex;
         flex-wrap: wrap; /* Ensure cards wrap properly */
         flex-direction: row; /* Keep the flow in a single row before wrapping */
-        justify-content: space-evenly; /* Center the stacked cards */
-        gap: 1.5rem; /* Space between cards */
+        justify-content: center; /* Center the stacked cards */
+        gap: 1rem; /* Space between cards */
         padding: 1rem;
     }
 
     .card {
-        width: calc(100% - 2rem); /* Full width minus padding/gap */
-        max-width: 350px; /* Ensure cards don't exceed max width */
-        height: auto; /* Let the height adjust dynamically */
-        margin: 0 auto; /* Center the cards horizontally */
-        position: relative; /* Reset position if it's set elsewhere */
-    }
+       flex: 1 1 100%;
+	   max-width: 100%;
+	   margin: 0 0 1rem;
+	}
+}
+
+/* Tablet Adjustments (769px to 1024px: 2 Cards per Row) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row */
+        max-width: 350px; /* Ensure consistent card size */
+	}
 }
 /* Testimonials Section */
 .testimonials__grid {
