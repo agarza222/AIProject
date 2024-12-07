@@ -164,81 +164,39 @@ body {
 .services__grid {
     display: flex;               /* Enable Flexbox layout */
     flex-wrap: wrap;             /* Allow cards to wrap to the next line */
-    justify-content: center;     /* Center the cards horizontally */
+    justify-content: space-between;     /* Evenly distribute cards */
     gap: 1.5rem;                 /* Space between cards */
     padding: 2rem;               /* Padding inside the container */
     margin: 0 auto;              /* Center the grid container */
     width: 100%;                 /* Ensure it spans the full width */
-    max-width: 1200px;  /* Optional: Limit the max width */
-	align-items: stretch;
+    max-width: 1200px;           /* Optional: Limit the max width */
+    align-items: stretch;        /* Stretch cards to match heights */
     box-sizing: border-box;      /* Include padding in width calculations */
 }
 
 /* Card Styling */
 .card {
-    width: 240px; /* Default width for cards on larger screens */
-    height: 350px; /* Fixed height for cards */
+    width: 240px;  /* Default width for cards on larger screens */
+	max-width: 350px;
+    height: 350px; /* Fixed height to maintain consistency */
+	flex: 1 1 calc(33.33% - 2rem);
     margin: 0 auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    position: relative;          /* Necessary for child positioning */
+    perspective: 1000px;         /* Enable 3D flip effect */
+    flex-shrink: 0;              /* Prevent shrinking */
     box-sizing: border-box;
-    perspective: 1000px; /* Enable 3D flip effect */
-    flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Media Queries for Larger Screens */
-@media (min-width: 1200px) {
-    .services__grid {
-        justify-content: space-between; /* Spread out the cards evenly */
-        gap: 2rem; /* Larger gap between cards for larger screens */
-    }
-
-    .card {
-        width: 22%; /* Cards will take up 22% of the container's width */
-        max-width: 350px; /* Set a max width for the cards */
-    }
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .services__grid {
-        display: flex;
-        flex-wrap: wrap; /* Ensure cards wrap properly */
-        flex-direction: row; /* Keep the flow in a single row before wrapping */
-        justify-content: center; /* Center the stacked cards */
-        gap: 1.5rem; /* Space between cards */
-        padding: 1rem;
-    }
-
-    .card {
-        width: calc(100% - 2rem); /* Full width minus padding/gap */
-        max-width: 350px; /* Ensure cards don't exceed max width */
-        height: auto; /* Let the height adjust dynamically */
-        margin: 0 auto; /* Center the cards horizontally */
-        position: relative; /* Reset position if it's set elsewhere */
-    }
-}
-/* Card Image */
-.card__image {
-    width: 100%; /* Ensure the image takes up 100% of the card’s width */
-    height: 150px; /* Set a fixed height for the image */
-    object-fit: cover; /* Ensures the image covers the space without stretching */
-    border-radius: 8px; /* Rounded corners for the image */
-    margin-bottom: transform 0.3s ease; ; /* Space below the image */
-}
 
 /* Front and Back of Card */
 .card__front,
 .card__back {
-    position: relative;
+    position: absolute;          /* Stack front and back */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Hide the back when the front is visible */
     padding: 1rem;
     border-radius: 8px;
     background-color: #ffffff;
@@ -248,31 +206,43 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease; /* Smooth flip animation */
+    box-sizing: border-box;
 }
 
 /* Card Front */
 .card__front {
     z-index: 2;
-    transform: rotateY(0deg);
-    background-color: #ffffff; /* White background */
-    color: #333; /* Dark text color for front */
+    transform: rotateY(0deg);    /* Default state */
+    background-color: #ffffff;  /* White background */
+    color: #333;                /* Dark text color for front */
 }
 
 /* Card Back */
 .card__back {
-    transform: rotateY(180deg);
-    background-color: #405DE6; /* Light blue background for the back */
-    color: #ffffff; /* White text color for back */
+    transform: rotateY(180deg);  /* Hidden by default */
+    background-color: #405DE6;  /* Light blue background for the back */
+    color: #ffffff;             /* White text color for back */
+    z-index: 1;                 /* Ensure it shows properly after flipping */
 }
 
 /* Card Flip Effect */
 .card:hover .card__front {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg); /* Rotate front to hide it */
+    z-index: 1;                 /* Send front behind during flip */
 }
 
 .card:hover .card__back {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg);    /* Rotate back to show it */
+    z-index: 2;                 /* Bring back to the front during flip */
+}
+
+/* Card Image */
+.card__image {
+    width: 100%;                /* Ensure the image takes up 100% of the card’s width */
+    height: 150px;              /* Set a fixed height for the image */
+    object-fit: cover;          /* Ensures the image covers the space without stretching */
+    border-radius: 8px;         /* Rounded corners for the image */
 }
 
 /* Card Title */
@@ -305,6 +275,39 @@ body {
     color: #F86194;
     text-align: center;
 }
+
+/* Media Queries for Larger Screens */
+@media (min-width: 1200px) {
+    .services__grid {
+        justify-content: space-between; /* Spread out the cards evenly */
+        gap: 2rem; /* Larger gap between cards for larger screens */
+    }
+
+    .card {
+        width: 22%; /* Cards will take up 22% of the container's width */
+        max-width: 350px; /* Set a max width for the cards */
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .services__grid {
+        display: flex;
+        flex-wrap: wrap; /* Ensure cards wrap properly */
+        flex-direction: row; /* Keep the flow in a single row before wrapping */
+        justify-content: space-evenly; /* Center the stacked cards */
+        gap: 1.5rem; /* Space between cards */
+        padding: 1rem;
+    }
+
+    .card {
+        width: calc(100% - 2rem); /* Full width minus padding/gap */
+        max-width: 350px; /* Ensure cards don't exceed max width */
+        height: auto; /* Let the height adjust dynamically */
+        margin: 0 auto; /* Center the cards horizontally */
+        position: relative; /* Reset position if it's set elsewhere */
+    }
+}
 /* Testimonials Section */
 .testimonials__grid {
     display: flex;
@@ -334,42 +337,98 @@ body {
     margin-top: 1rem;
 }
 
-/* Apparel Section Styling */
+/* Apparel Section */
 .portfolio__gallery {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 2rem; /* Space between the section and items */
+    margin-top: 2rem;
 }
 
 .portfolio__item {
-    width: 250px; /* Control the size of the image container */
-    height: auto; /* Adjust the height based on image */
+    width: 250px;
+    height: auto;
     background-color: #fff;
     border-radius: 8px;
-    overflow: hidden; /* Prevent image from spilling outside container */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for items */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     display: flex;
-    justify-content: center; /* Center the image inside the container */
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
 }
 
-/* Hover effect for portfolio items */
 .portfolio__item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio__image {
-    width: 100%; /* Make image take up full width of the container */
-    height: auto; /* Keep the aspect ratio */
-    object-fit: contain; /* Ensures the image stays within bounds without distortion */
-    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
+.portfolio__details {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.portfolio__item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.portfolio__item-price {
+    font-size: 1rem;
+    color: #405DE6;
+    margin-bottom: 1rem;
+}
+
+/* Quantity Input */
+.portfolio__label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.portfolio__quantity {
+    width: 60px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Buy Button */
+.portfolio__buy-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    background-color: #f77737;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio__buy-btn:hover {
+    background-color: #0F75BD;
+    transform: scale(1.05);
+}
 /* Contact Form Styling */
 .contact__form {
     display: flex;
@@ -459,4 +518,34 @@ body {
     .section__title {
         font-size: 1.5rem;
     }
+}
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f77737; /* Instagram orange */
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.back-to-top:hover {
+    background-color: #0F75BD; /* Hover effect with blue */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Optional: Show button when visible */
+.back-to-top.show {
+    display: block; /* Make it visible */
+    opacity: 1;
+    transform: translateY(0);
 }
