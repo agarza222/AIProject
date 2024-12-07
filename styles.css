@@ -170,7 +170,7 @@ body {
     margin: 0 auto;              /* Center the grid container */
     width: 100%;                 /* Ensure it spans the full width */
     max-width: 1200px;           /* Optional: Limit the max width */
-    align-items: stretch;        /* Stretch cards to match heights */
+    align-items: center;        /* Stretch cards to match heights */
     box-sizing: border-box;      /* Include padding in width calculations */
 }
 
